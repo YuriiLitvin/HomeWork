@@ -14,17 +14,17 @@ namespace homeWork1
         {
             
             string ticket = CheckTicketNumber();
-            int[] digitArr = new int[numberLength];
+            List<int> digitList = new List<int>();
 
             for (int i = 0; i < numberLength; i++)
             {
                 int digit = ticket[i] - '0';
-                digitArr[i] = digit;
+                digitList.Add(digit);
             }
-            int sum1 = digitArr[0] + digitArr[1] + digitArr[2];
-            int sum2 = digitArr[3] + digitArr[4] + digitArr[5];
+            int sumFirst = digitList.Take(3).Sum();
+            int sumLast = digitList.Skip(3).Take(3).Sum();
 
-            if (sum1 == sum2)
+            if (sumFirst == sumLast)
             {
                 Console.WriteLine("Congratulations! You have a lucky ticket!");
             }
