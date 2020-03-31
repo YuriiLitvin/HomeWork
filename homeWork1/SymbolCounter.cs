@@ -46,7 +46,6 @@ namespace homeWork1
                 {
                     inputList.Add(symbol);
                 }
-                
             }
             return inputList;
         }

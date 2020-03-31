@@ -8,6 +8,9 @@ namespace homeWork1
     {
         private int numberLength = 6;
         
+        InputString myString = new InputString();
+        Character myChar = new Character();
+
         public void CheckLuckyTicket()
         {
             string ticket = CheckTicketNumber();
@@ -21,21 +24,21 @@ namespace homeWork1
                 Console.WriteLine("Sorry. Your ticket isn't lucky");
             }
         }
-
+        
         public string CheckTicketNumber()
         {
+        
             string ticketNumber;
             
             while (true)
             {
-                Console.Write("Enter your ticket number: ");
-                ticketNumber = Console.ReadLine();
+                ticketNumber = myString.Get("ticket number");
                 
                 if (ticketNumber.Length != numberLength)
                 {
                     Console.WriteLine("Please try again and enter correct amount of digits");
                 }
-                else if (CheckIfDigit(ticketNumber)) 
+                else if (myChar.CheckIfDigit(ticketNumber)) 
                 {
                     Console.WriteLine("You've entered character insted of digit. Please try again");
                 }
@@ -47,24 +50,12 @@ namespace homeWork1
             return ticketNumber;
         }
         
-        public bool CheckIfDigit(string value) 
-        {
-            for (int i = 0; i < value.Length; i++)
-            {
-                bool digit = Char.IsDigit(value, i);
-                if(!digit) 
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
         
         public bool GetDigitSum(string value) 
         {
             List<int> digitList = new List<int>();
 
-            for (int i = 0; i < numberLength; i++)
+            for (int i = 0; i < value.Length; i++)
             {
                 int digit = value[i] - '0';
                 digitList.Add(digit);

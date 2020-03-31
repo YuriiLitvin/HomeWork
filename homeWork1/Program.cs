@@ -15,9 +15,9 @@ namespace homeWork1
             //Console.ReadKey();
 
 
-            //TicketComparator myTicket = new TicketComparator();
-            //myTicket.CheckLuckyTicket();
-            //Console.ReadKey();
+            TicketComparator myTicket = new TicketComparator();
+            myTicket.CheckLuckyTicket();
+            Console.ReadKey();
 
             LowerUpperCaseConverter myConverter = new LowerUpperCaseConverter();
             myConverter.ConvertText();

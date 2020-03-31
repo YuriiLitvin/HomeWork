@@ -8,14 +8,12 @@ namespace homeWork1
 {
     class LowerUpperCaseConverter
     {
-
+        InputString myString = new InputString();
         public void ConvertText()
         {
-            Console.Write("Enter your text: ");
-            string inputString = Console.ReadLine();
+            string inputString = myString.Get("text");
 
             string result = String.Join("", ConvertChar(inputString).ToArray());
-
             Console.WriteLine($"Your result text is: {result}");
         }
         
