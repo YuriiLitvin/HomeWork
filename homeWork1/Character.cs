@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace homeWork1
 {
-    class Character
+    public class Character
     {
         public bool CheckIfDigit(string value)
         {
@@ -20,6 +20,16 @@ namespace homeWork1
             }
             return false;
         }
+        public List<int> ConvertToDigit(string value)
+        {
+            List<int> list = new List<int>();
 
+            for (int i = 0; i < value.Length; i++)
+            {
+                int digit = value[i] - '0';
+                list.Add(digit);
+            }
+            return list;
+        }
     }
 }

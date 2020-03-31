@@ -6,7 +6,7 @@ namespace homeWork1
 {
     class TicketComparator
     {
-        private int numberLength = 6;
+        private int digitAmout = 6;
         
         InputString myString = new InputString();
         Character myChar = new Character();
@@ -23,18 +23,18 @@ namespace homeWork1
             {
                 Console.WriteLine("Sorry. Your ticket isn't lucky");
             }
+
         }
         
         public string CheckTicketNumber()
         {
-        
             string ticketNumber;
             
             while (true)
             {
                 ticketNumber = myString.Get("ticket number");
                 
-                if (ticketNumber.Length != numberLength)
+                if (ticketNumber.Length != digitAmout)
                 {
                     Console.WriteLine("Please try again and enter correct amount of digits");
                 }
@@ -50,27 +50,15 @@ namespace homeWork1
             return ticketNumber;
         }
         
-        
         public bool GetDigitSum(string value) 
         {
-            List<int> digitList = new List<int>();
-
-            for (int i = 0; i < value.Length; i++)
-            {
-                int digit = value[i] - '0';
-                digitList.Add(digit);
-            }
-            int sumFirst = digitList.Take(3).Sum();
-            int sumLast = digitList.Skip(3).Take(3).Sum();
+            int sumFirst = myChar.ConvertToDigit(value).Take(3).Sum();
+            int sumLast = myChar.ConvertToDigit(value).Skip(3).Take(3).Sum();
 
             bool result = sumFirst == sumLast;
             
             return result;
         }
-    
-    
-    
-    
-    
+        
     }
 }

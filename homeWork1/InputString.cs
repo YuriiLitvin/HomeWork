@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace homeWork1
 {
-    class InputString
+    public class InputString
     {
         public string Get(string text)
         {

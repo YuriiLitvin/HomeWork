@@ -11,16 +11,16 @@ namespace homeWork1
         InputString myString = new InputString();
         public void ConvertText()
         {
-            string inputString = myString.Get("text");
+            string input = myString.Get("text");
 
-            string result = String.Join("", ConvertChar(inputString).ToArray());
+            string result = String.Join("", CheckUpLowCase(input).ToArray());
             Console.WriteLine($"Your result text is: {result}");
         }
         
 
-        public List<char> ConvertChar(string value) 
+        public List<char> CheckUpLowCase(string value) 
         {
-            List<char> charList = new List<char>();
+            List<char> list = new List<char>();
 
             for (int i = 0; i < value.Length; i++)
             {
@@ -33,10 +33,10 @@ namespace homeWork1
                 {
                     decimValue -= 32;
                 }
-                char resultChar = Convert.ToChar(decimValue);
-                charList.Add(resultChar);
+                char result = Convert.ToChar(decimValue);
+                list.Add(result);
             }
-            return charList;
+            return list;
         }
     }
 }
