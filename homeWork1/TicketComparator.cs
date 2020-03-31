@@ -12,19 +12,9 @@ namespace homeWork1
         
         public void CheckLuckyTicket()
         {
-            
             string ticket = CheckTicketNumber();
-            List<int> digitList = new List<int>();
 
-            for (int i = 0; i < numberLength; i++)
-            {
-                int digit = ticket[i] - '0';
-                digitList.Add(digit);
-            }
-            int sumFirst = digitList.Take(3).Sum();
-            int sumLast = digitList.Skip(3).Take(3).Sum();
-
-            if (sumFirst == sumLast)
+            if (GetDigitSum(ticket))
             {
                 Console.WriteLine("Congratulations! You have a lucky ticket!");
             }
@@ -71,5 +61,27 @@ namespace homeWork1
             }
             return false;
         }
+        
+        public bool GetDigitSum(string value) 
+        {
+            List<int> digitList = new List<int>();
+
+            for (int i = 0; i < numberLength; i++)
+            {
+                int digit = value[i] - '0';
+                digitList.Add(digit);
+            }
+            int sumFirst = digitList.Take(3).Sum();
+            int sumLast = digitList.Skip(3).Take(3).Sum();
+
+            bool result = sumFirst == sumLast;
+            
+            return result;
+        }
+    
+    
+    
+    
+    
     }
 }
