@@ -14,13 +14,15 @@ namespace homeWork1
             //Console.WriteLine(symCount.GetSpaceSum());
             //Console.ReadKey();
 
-            //FileTxt file = new FileTxt();
-            //file.Create();
 
-            TicketComparator myTicket = new TicketComparator();
-            myTicket.CheckLuckyTicket();
+            //TicketComparator myTicket = new TicketComparator();
+            //myTicket.CheckLuckyTicket();
+            //Console.ReadKey();
+
+            LowerUpperCaseConverter myConverter = new LowerUpperCaseConverter();
+            myConverter.ConvertText();
             Console.ReadKey();
-
         }
+
     }
 }
