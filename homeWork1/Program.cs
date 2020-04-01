@@ -15,13 +15,23 @@ namespace homeWork1
             //Console.ReadKey();
 
 
-            TicketComparator myTicket = new TicketComparator();
-            myTicket.CheckLuckyTicket();
+            //TicketComparator myTicket = new TicketComparator();
+            //myTicket.CheckLuckyTicket();
+            //Console.ReadKey();
+
+            //LowerUpperCaseConverter myConverter = new LowerUpperCaseConverter();
+            //myConverter.ConvertText();
+            //Console.ReadKey();
+
+            //DigitRange myRange = new DigitRange();
+            //myRange.Get();
+            //Console.ReadKey();
+
+            InverseNumber myNumber = new InverseNumber();
+            myNumber.Get();
             Console.ReadKey();
 
-            LowerUpperCaseConverter myConverter = new LowerUpperCaseConverter();
-            myConverter.ConvertText();
-            Console.ReadKey();
+
         }
 
     }

@@ -8,18 +8,47 @@ namespace homeWork1
 {
     class DigitRange
     {
-        // [] A & B are digits
-        // [] A<B is true
-        // [] print out range AB
-        public void Get() 
+        InputString myString = new InputString();
+        Character myChar = new Character();
+
+        
+        public void Get()
         {
-            InputString myString = new InputString();
-            string A = myString.Get("A parameter");
-            string B = myString.Get("B parameter");
+            while (true)
+            {
+                string A = myString.Get("A parameter");
+                string B = myString.Get("B parameter");
+                int digitA = myChar.GetDigit(A);
+                int digitB = myChar.GetDigit(B);
 
-
-
+                if (!myChar.CheckIfDigit(A) || !myChar.CheckIfDigit(B))
+                {
+                    Console.WriteLine("You've entered character insted of digit");
+                }
+                else if (digitA >= digitB)
+                {
+                    Console.WriteLine("Sorry, but A has to be less than B");
+                }
+                else
+                {
+                    Print(digitA, digitB);
+                    break;
+                }
+                Console.WriteLine("Please try again");
+            }
         }
-    
+        
+        public void Print( int a, int b)
+        {
+            
+            while (a != b+1)
+            {
+                for (int i = 0; i < a; i++)
+                {
+                    Console.WriteLine(a);
+                }
+                a++;
+            }
+        }
     }
 }

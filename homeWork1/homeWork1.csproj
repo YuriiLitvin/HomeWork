@@ -47,6 +47,7 @@
     <Compile Include="DigitRange.cs" />
     <Compile Include="FileTxt.cs" />
     <Compile Include="InputString.cs" />
+    <Compile Include="InverseNumber.cs" />
     <Compile Include="LowerUpperCaseConverter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

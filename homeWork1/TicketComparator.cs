@@ -1,19 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace homeWork1
 {
     class TicketComparator
     {
-        private int digitAmout = 6;
+        private int digitAmount = 6;
         
         InputString myString = new InputString();
         Character myChar = new Character();
 
         public void CheckLuckyTicket()
         {
-            string ticket = CheckTicketNumber();
+            string ticket = CheckCorrectInput();
 
             if (GetDigitSum(ticket))
             {
@@ -26,7 +25,7 @@ namespace homeWork1
 
         }
         
-        public string CheckTicketNumber()
+        public string CheckCorrectInput()
         {
             string ticketNumber;
             
@@ -34,26 +33,27 @@ namespace homeWork1
             {
                 ticketNumber = myString.Get("ticket number");
                 
-                if (ticketNumber.Length != digitAmout)
+                if (ticketNumber.Length != digitAmount)
                 {
-                    Console.WriteLine("Please try again and enter correct amount of digits");
+                    Console.WriteLine("You've entered incorrect amount of digits");
                 }
-                else if (myChar.CheckIfDigit(ticketNumber)) 
+                else if (!myChar.CheckIfDigit(ticketNumber)) 
                 {
-                    Console.WriteLine("You've entered character insted of digit. Please try again");
+                    Console.WriteLine("You've entered character insted of digit");
                 }
                 else
                 {
                     break;
                 }
+                Console.WriteLine("Please try again");
             }
             return ticketNumber;
         }
         
         public bool GetDigitSum(string value) 
         {
-            int sumFirst = myChar.ConvertToDigit(value).Take(3).Sum();
-            int sumLast = myChar.ConvertToDigit(value).Skip(3).Take(3).Sum();
+            int sumFirst = myChar.GetDigitList(value).Take(3).Sum();
+            int sumLast = myChar.GetDigitList(value).Skip(3).Take(3).Sum();
 
             bool result = sumFirst == sumLast;
             
