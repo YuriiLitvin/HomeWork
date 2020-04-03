@@ -7,7 +7,7 @@ namespace homeWork1
     {
         private int digitAmount = 6;
         
-        InputString myString = new InputString();
+        Text myString = new Text();
         Character myChar = new Character();
 
         public void CheckLuckyTicket()

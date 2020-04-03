@@ -8,7 +8,7 @@ namespace homeWork1
 {
     class DigitRange
     {
-        InputString myString = new InputString();
+        Text myString = new Text();
         Character myChar = new Character();
 
         
@@ -40,15 +40,28 @@ namespace homeWork1
         
         public void Print( int a, int b)
         {
-            
-            while (a != b+1)
+            do
             {
                 for (int i = 0; i < a; i++)
                 {
                     Console.WriteLine(a);
                 }
                 a++;
-            }
+
+                if (a > b)
+                {
+                    break;
+                }
+            } while (true);
+            
+            //while (a != b+1)
+            //{
+            //    for (int i = 0; i < a; i++)
+            //    {
+            //        Console.WriteLine(a);
+            //    }
+            //    a++;
+            //}
         }
     }
 }

@@ -8,7 +8,7 @@ namespace homeWork1
 {
     class InverseNumber
     {
-        InputString myString = new InputString();
+        Text myString = new Text();
         Character myChar = new Character();
 
         public void Get()

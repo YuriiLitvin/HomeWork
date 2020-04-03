@@ -8,7 +8,7 @@ namespace homeWork1
 {
     class LowerUpperCaseConverter
     {
-        InputString myString = new InputString();
+        Text myString = new Text();
         public void ConvertText()
         {
             string input = myString.Get("text");

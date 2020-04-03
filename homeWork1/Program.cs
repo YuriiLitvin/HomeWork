@@ -10,8 +10,8 @@ namespace homeWork1
     {
         static void Main(string[] args)
         {
-            //SymbolCounter symCount = new SymbolCounter();
-            //Console.WriteLine(symCount.GetSpaceSum());
+            SymbolCounter mySpace = new SymbolCounter();
+            mySpace.GetSpaceSum();
             //Console.ReadKey();
 
 
@@ -27,9 +27,9 @@ namespace homeWork1
             //myRange.Get();
             //Console.ReadKey();
 
-            InverseNumber myNumber = new InverseNumber();
-            myNumber.Get();
-            Console.ReadKey();
+            //InverseNumber myNumber = new InverseNumber();
+            //myNumber.Get();
+            //Console.ReadKey();
 
 
         }

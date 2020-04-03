@@ -1,54 +1,35 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Text;
 
 namespace homeWork1
 {
     class SymbolCounter
     {
-        public string GetSpaceSum() 
+        public void GetSpaceSum()
         {
-            int spaceSum = 0;
-            bool spaceExist;
-            Console.WriteLine("Enter your text:");
+            //while (Console.ReadKey().Key != ConsoleKey.OemPeriod) { }
 
-            foreach (char symbol in GetListFromInput()) 
+            ConsoleKeyInfo cki;
+            // Prevent example from ending if CTL+C is pressed.
+            Console.TreatControlCAsInput = true;
+
+            Console.WriteLine("Enter your text: ");
+            //Console.WriteLine("Press the Escape (Esc) key to quit: \n");
+            do
             {
-                if (spaceExist = symbol.Equals(' ')) 
-                {
-                    spaceSum++;
-                } 
-                
-                
-                
-                //for (int i = 0; i < symbolLine.Length; i++)
-                //{
-                //    string str1 = symbolLine.Substring(i, 1);
-                //    if (str1 == " ")
-                //        spaceSum++;
-                //}
+                cki = Console.ReadKey();
+                //Console.Write(" --- You pressed ");
+                //if ((cki.Modifiers & ConsoleModifiers.Alt) != 0) Console.Write("ALT+");
+                //if ((cki.Modifiers & ConsoleModifiers.Shift) != 0) Console.Write("SHIFT+");
+                //if ((cki.Modifiers & ConsoleModifiers.Control) != 0) Console.Write("CTL+");
+                Console.Write(cki.Key.ToString());
+            } while (cki.Key != ConsoleKey.OemPeriod);
 
-            }
-            return $"\nThe sum of spaces is: {spaceSum}";
         }
-        
-        
-        
-        public List<char>  GetListFromInput() 
-        {
-            List<char> inputList = new List<char>();
-            
-            char symbol = Console.ReadKey().KeyChar;
 
-            while (true)
-            {
-                //char symbol = Console.ReadLine()[0];
-                if (symbol != '.') 
-                {
-                    inputList.Add(symbol);
-                }
-            }
-            return inputList;
-        }
-    
+
     }
+
+
+    
 }
