@@ -12,7 +12,7 @@ namespace homeWork1
         {
             SymbolCounter mySpace = new SymbolCounter();
             mySpace.GetSpaceSum();
-            //Console.ReadKey();
+            Console.ReadKey();
 
 
             //TicketComparator myTicket = new TicketComparator();
