@@ -9,12 +9,14 @@ namespace homeWork1
     class LowerUpperCaseConverter
     {
         Text myString = new Text();
-        public void ConvertText()
+        public string ConvertText()
         {
             string input = myString.Get("text");
 
             string result = String.Join("", CheckUpLowCase(input).ToArray());
-            Console.WriteLine($"Your result text is: {result}");
+
+            myString.PrintToTheFile(3,result);
+            return $"Your result text is: {result}";
         }
         
 

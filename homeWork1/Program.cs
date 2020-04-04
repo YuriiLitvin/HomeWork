@@ -11,25 +11,25 @@ namespace homeWork1
         static void Main(string[] args)
         {
             SymbolCounter mySpace = new SymbolCounter();
-            mySpace.GetSpaceSum();
-            Console.ReadKey();
+            var answer1 = mySpace.GetSpaceSum();
+            Console.WriteLine(answer1);
 
 
-            //TicketComparator myTicket = new TicketComparator();
-            //myTicket.CheckLuckyTicket();
-            //Console.ReadKey();
+            TicketComparator myTicket = new TicketComparator();
+            var answer2 = myTicket.CheckLuckyTicket();
+            Console.WriteLine(answer2);
 
-            //LowerUpperCaseConverter myConverter = new LowerUpperCaseConverter();
-            //myConverter.ConvertText();
-            //Console.ReadKey();
+            LowerUpperCaseConverter myConverter = new LowerUpperCaseConverter();
+            var answer3 = myConverter.ConvertText();
+            Console.WriteLine(answer3);
 
-            //DigitRange myRange = new DigitRange();
-            //myRange.Get();
-            //Console.ReadKey();
+            DigitRange myRange = new DigitRange();
+            var answer4 = myRange.Get();
+            Console.WriteLine(answer4);
 
-            //InverseNumber myNumber = new InverseNumber();
-            //myNumber.Get();
-            //Console.ReadKey();
+            InverseNumber myNumber = new InverseNumber();
+            var answer5 = myNumber.Get();
+            Console.WriteLine(answer5);
 
 
         }

@@ -10,17 +10,22 @@ namespace homeWork1
         Text myString = new Text();
         Character myChar = new Character();
 
-        public void CheckLuckyTicket()
+        public string CheckLuckyTicket()
         {
             string ticket = CheckCorrectInput();
 
             if (GetDigitSum(ticket))
             {
-                Console.WriteLine("Congratulations! You have a lucky ticket!");
+                string result = "Congratulations! You have a lucky ticket!";
+                myString.PrintToTheFile(2,result);
+                return result;
             }
             else
             {
-                Console.WriteLine("Sorry. Your ticket isn't lucky");
+                string result = "Sorry. Your ticket isn't lucky";
+                myString.PrintToTheFile(2, result);
+                return result;
+
             }
 
         }

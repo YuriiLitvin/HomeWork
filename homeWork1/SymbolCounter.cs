@@ -5,24 +5,30 @@ namespace homeWork1
 {
     class SymbolCounter
     {
-        public void GetSpaceSum()
+        public string GetSpaceSum()
         {
-            int i = 0;
-            
-            do
+            Text myString = new Text();
+
+            Console.WriteLine("Enter your symbols: ");
+            Console.WriteLine("To quit enter '.'");
+            int spacesCount = 0;
+            while(true) 
             {
-                if (Console.ReadKey().Key != ConsoleKey.Spacebar)
+                var charToCheck = Console.ReadKey().KeyChar;
+
+                if(charToCheck == '.') 
                 {
-                    i++;
+                    break;
                 }
-
-            } while (Console.ReadKey().Key != ConsoleKey.OemPeriod);
-            Console.WriteLine(i);
+                if (charToCheck == ' ')
+                {
+                    spacesCount++;
+                }
+            }
+            string result = $"The amount of spaces is: {spacesCount}";
+            myString.PrintToTheFile(1,result);
+            
+            return result;
         }
-
-
     }
-
-
-    
 }

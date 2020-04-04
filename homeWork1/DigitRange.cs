@@ -12,7 +12,7 @@ namespace homeWork1
         Character myChar = new Character();
 
         
-        public void Get()
+        public string Get()
         {
             while (true)
             {
@@ -31,37 +31,35 @@ namespace homeWork1
                 }
                 else
                 {
-                    Print(digitA, digitB);
-                    break;
+                    string result = Print(digitA, digitB);
+
+                    myString.PrintToTheFile(4,result);
+                    return result;
                 }
                 Console.WriteLine("Please try again");
             }
         }
         
-        public void Print( int a, int b)
+        public string Print( int a, int b)
         {
-            do
+            List<string> list = new List<string>();
+            while (true)
             {
                 for (int i = 0; i < a; i++)
                 {
-                    Console.WriteLine(a);
+                    string value = a.ToString();
+                    list.Add(value);
+                    
                 }
                 a++;
 
                 if (a > b)
                 {
-                    break;
+                    string result = String.Join(String.Empty, list.ToArray());
+                    return result;
                 }
-            } while (true);
+            } 
             
-            //while (a != b+1)
-            //{
-            //    for (int i = 0; i < a; i++)
-            //    {
-            //        Console.WriteLine(a);
-            //    }
-            //    a++;
-            //}
         }
     }
 }

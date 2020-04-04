@@ -11,7 +11,7 @@ namespace homeWork1
         Text myString = new Text();
         Character myChar = new Character();
 
-        public void Get()
+        public string Get()
         {
             while (true)
             {
@@ -23,9 +23,11 @@ namespace homeWork1
                 }
                 else
                 {
-                    string inverseNumber = Inverse(number);
-                    Console.WriteLine(myChar.GetDigit(inverseNumber)); 
-                    break;
+                    string result = Inverse(number);
+                    //var result = myChar.GetDigit(inverseNumber);
+
+                    myString.PrintToTheFile(5,result);
+                    return result;
                 }
                 Console.WriteLine("Please try again");
             }
