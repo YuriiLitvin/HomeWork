@@ -5,40 +5,39 @@ namespace homeWork1
 {
     class TicketComparator
     {
-        private int digitAmount = 6;
+        private int digitСount = 6;
         
-        Text myString = new Text();
         Character myChar = new Character();
 
-        public string CheckLuckyTicket()
+        public string CheckIfLucky()
         {
-            string ticket = CheckCorrectInput();
+            string ticket = CheckIfCorrect();
 
-            if (GetDigitSum(ticket))
+            if (CheckIfEqual(ticket))
             {
                 string result = "Congratulations! You have a lucky ticket!";
-                myString.PrintToTheFile(2,result);
+                TextForWork.PrintToTheFile(2,result);
                 return result;
             }
             else
             {
                 string result = "Sorry. Your ticket isn't lucky";
-                myString.PrintToTheFile(2, result);
+                TextForWork.PrintToTheFile(2, result);
                 return result;
 
             }
 
         }
         
-        public string CheckCorrectInput()
+        public string CheckIfCorrect()
         {
             string ticketNumber;
             
             while (true)
             {
-                ticketNumber = myString.Get("ticket number");
+                ticketNumber = TextForWork.Get("ticket number");
                 
-                if (ticketNumber.Length != digitAmount)
+                if (ticketNumber.Length != digitСount)
                 {
                     Console.WriteLine("You've entered incorrect amount of digits");
                 }
@@ -55,10 +54,10 @@ namespace homeWork1
             return ticketNumber;
         }
         
-        public bool GetDigitSum(string value) 
+        public bool CheckIfEqual(string value) 
         {
-            int sumFirst = myChar.GetDigitList(value).Take(3).Sum();
-            int sumLast = myChar.GetDigitList(value).Skip(3).Take(3).Sum();
+            int sumFirst = myChar.GetDigit(value.Substring(0,3));
+            int sumLast = myChar.GetDigit(value.Substring(3));
 
             bool result = sumFirst == sumLast;
             

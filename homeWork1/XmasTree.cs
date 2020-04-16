@@ -1,23 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace homeWork1
 {
-    class DigitRange
+    class XmasTree
     {
-        Text myString = new Text();
         Character myChar = new Character();
 
         
-        public string Get()
+        public string GetTree()
         {
             while (true)
             {
-                string A = myString.Get("A parameter");
-                string B = myString.Get("B parameter");
+                string A = TextForWork.Get("A parameter");
+                string B = TextForWork.Get("B parameter");
                 int digitA = myChar.GetDigit(A);
                 int digitB = myChar.GetDigit(B);
 
@@ -31,31 +28,39 @@ namespace homeWork1
                 }
                 else
                 {
-                    string result = Print(digitA, digitB);
-
-                    myString.PrintToTheFile(4,result);
+                    string result = PrintTree(digitA, digitB);
+                    //break;
+                    //TextForWork.PrintToTheFile(4, result);
                     return result;
                 }
                 Console.WriteLine("Please try again");
             }
         }
         
-        public string Print( int a, int b)
+        public string PrintTree (int a, int b)
         {
+            string value = "";
             List<string> list = new List<string>();
             while (true)
             {
+                
                 for (int i = 0; i < a; i++)
                 {
-                    string value = a.ToString();
-                    list.Add(value);
+                    Console.Write(a);
+                    value += a.ToString();
+                    //list.Add(value);
                     
                 }
+                
+                list.Add(value);
+                Console.WriteLine();
+                
                 a++;
 
                 if (a > b)
                 {
-                    string result = String.Join(String.Empty, list.ToArray());
+                    //break;
+                    string result = String.Join("\n", list.ToArray());
                     return result;
                 }
             } 

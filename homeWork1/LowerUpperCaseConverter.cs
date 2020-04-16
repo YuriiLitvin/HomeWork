@@ -8,37 +8,41 @@ namespace homeWork1
 {
     class LowerUpperCaseConverter
     {
-        Text myString = new Text();
+        private const int A = 65;
+        private const int Z = 90;
+        private const int a = 97;
+        private const int z = 122;
+        private const int difference = 32;
+
         public string ConvertText()
         {
-            string input = myString.Get("text");
+            string input = TextForWork.Get("text");
 
-            string result = String.Join("", CheckUpLowCase(input).ToArray());
-
-            myString.PrintToTheFile(3,result);
+            string result = GetUpLowCase(input);
+            TextForWork.PrintToTheFile(3, result);
+           
             return $"Your result text is: {result}";
         }
         
 
-        public List<char> CheckUpLowCase(string value) 
+        public string GetUpLowCase(string value) 
         {
-            List<char> list = new List<char>();
-
+            string result = "";
             for (int i = 0; i < value.Length; i++)
             {
                 int decimValue = value[i];
-                if (decimValue >= 65 && decimValue <= 90)
+                if (decimValue >= A && decimValue <= Z)
                 {
-                    decimValue += 32;
+                    decimValue += difference;
                 }
-                else if (decimValue >= 97 && decimValue <= 122)
+                else if (decimValue >= a && decimValue <= z)
                 {
-                    decimValue -= 32;
+                    decimValue -= difference;
                 }
-                char result = Convert.ToChar(decimValue);
-                list.Add(result);
+
+                result += Convert.ToChar(decimValue);
             }
-            return list;
+            return result;
         }
     }
 }

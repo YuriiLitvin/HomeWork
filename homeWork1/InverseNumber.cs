@@ -8,14 +8,13 @@ namespace homeWork1
 {
     class InverseNumber
     {
-        Text myString = new Text();
         Character myChar = new Character();
 
         public string Get()
         {
             while (true)
             {
-                string number = myString.Get("number");
+                string number = TextForWork.Get("number");
 
                 if (!myChar.CheckIfDigit(number))
                 {
@@ -23,24 +22,16 @@ namespace homeWork1
                 }
                 else
                 {
-                    string result = Inverse(number);
-                    //var result = myChar.GetDigit(inverseNumber);
-
-                    myString.PrintToTheFile(5,result);
+                    int[] arr = myChar.GetDigitList(number).ToArray();
+                    Array.Reverse(arr);
+                    
+                    var result = String.Join("",arr);
+                    TextForWork.PrintToTheFile(5, result);
                     return result;
                 }
                 Console.WriteLine("Please try again");
             }
         }
         
-        public string Inverse(string value) 
-        {
-            char[] charArray = value.ToCharArray();
-            Array.Reverse(charArray);
-            return new string(charArray);
-
-        }
-    
-    
     }
 }

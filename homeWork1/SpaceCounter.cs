@@ -3,15 +3,13 @@ using System.Text;
 
 namespace homeWork1
 {
-    class SymbolCounter
+    class SpaceCounter
     {
-        public string GetSpaceSum()
+        public string GetCount()
         {
-            Text myString = new Text();
-
             Console.WriteLine("Enter your symbols: ");
             Console.WriteLine("To quit enter '.'");
-            int spacesCount = 0;
+            int spaceCount = 0;
             while(true) 
             {
                 var charToCheck = Console.ReadKey().KeyChar;
@@ -22,11 +20,11 @@ namespace homeWork1
                 }
                 if (charToCheck == ' ')
                 {
-                    spacesCount++;
+                    spaceCount++;
                 }
             }
-            string result = $"The amount of spaces is: {spacesCount}";
-            myString.PrintToTheFile(1,result);
+            string result = $"The amount of spaces is: {spaceCount}";
+            TextForWork.PrintToTheFile(1,result);
             
             return result;
         }

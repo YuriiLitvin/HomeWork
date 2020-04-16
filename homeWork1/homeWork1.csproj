@@ -44,14 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character.cs" />
-    <Compile Include="DigitRange.cs" />
+    <Compile Include="XmasTree.cs" />
     <Compile Include="FileTxt.cs" />
-    <Compile Include="Text.cs" />
     <Compile Include="InverseNumber.cs" />
     <Compile Include="LowerUpperCaseConverter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SymbolCounter.cs" />
+    <Compile Include="SpaceCounter.cs" />
     <Compile Include="TicketComparator.cs" />
   </ItemGroup>
   <ItemGroup>
