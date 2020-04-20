@@ -3,12 +3,10 @@ using System.Linq;
 
 namespace homeWork1
 {
-    class TicketComparator
+    class Ticket
     {
         private int digitСount = 6;
         
-        Character myChar = new Character();
-
         public string CheckIfLucky()
         {
             string ticket = CheckIfCorrect();
@@ -41,7 +39,7 @@ namespace homeWork1
                 {
                     Console.WriteLine("You've entered incorrect amount of digits");
                 }
-                else if (!myChar.CheckIfDigit(ticketNumber)) 
+                else if (!Character.CheckIfDigit(ticketNumber)) 
                 {
                     Console.WriteLine("You've entered character insted of digit");
                 }
@@ -56,12 +54,12 @@ namespace homeWork1
         
         public bool CheckIfEqual(string value) 
         {
-            int sumFirst = myChar.GetDigit(value.Substring(0,3));
-            int sumLast = myChar.GetDigit(value.Substring(3));
+            int sumFirst = Character.GetDigit(value.Substring(0,3));
+            int sumLast = Character.GetDigit(value.Substring(3));
 
-            bool result = sumFirst == sumLast;
+           
             
-            return result;
+            return sumFirst == sumLast;
         }
         
     }

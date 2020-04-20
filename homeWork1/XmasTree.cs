@@ -6,19 +6,16 @@ namespace homeWork1
 {
     class XmasTree
     {
-        Character myChar = new Character();
-
-        
         public string GetTree()
         {
             while (true)
             {
                 string A = TextForWork.Get("A parameter");
                 string B = TextForWork.Get("B parameter");
-                int digitA = myChar.GetDigit(A);
-                int digitB = myChar.GetDigit(B);
+                int digitA = Character.GetDigit(A);
+                int digitB = Character.GetDigit(B);
 
-                if (!myChar.CheckIfDigit(A) || !myChar.CheckIfDigit(B))
+                if (!Character.CheckIfDigit(A) || !Character.CheckIfDigit(B))
                 {
                     Console.WriteLine("You've entered character insted of digit");
                 }
@@ -29,8 +26,8 @@ namespace homeWork1
                 else
                 {
                     string result = PrintTree(digitA, digitB);
-                    //break;
-                    //TextForWork.PrintToTheFile(4, result);
+                    
+                    TextForWork.PrintToTheFile(4, result);
                     return result;
                 }
                 Console.WriteLine("Please try again");
@@ -40,31 +37,15 @@ namespace homeWork1
         public string PrintTree (int a, int b)
         {
             string value = "";
-            List<string> list = new List<string>();
-            while (true)
+            for (; a <= b; a++)
             {
-                
                 for (int i = 0; i < a; i++)
                 {
-                    Console.Write(a);
-                    value += a.ToString();
-                    //list.Add(value);
-                    
+                    value += a;
                 }
-                
-                list.Add(value);
-                Console.WriteLine();
-                
-                a++;
-
-                if (a > b)
-                {
-                    //break;
-                    string result = String.Join("\n", list.ToArray());
-                    return result;
-                }
-            } 
-            
+                value += "\n";
+            }
+            return value;
         }
     }
 }

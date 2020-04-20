@@ -6,26 +6,25 @@ using System.Threading.Tasks;
 
 namespace homeWork1
 {
-    class InverseNumber
+    class MirrorNumber
     {
-        Character myChar = new Character();
 
-        public string Get()
+        public string GetNumber()
         {
             while (true)
             {
-                string number = TextForWork.Get("number");
+                string unconvertedNumber = TextForWork.Get("number");
 
-                if (!myChar.CheckIfDigit(number))
+                if (!Character.CheckIfDigit(unconvertedNumber))
                 {
                     Console.WriteLine("Sorry, number can hold only digits and can't be negative");
                 }
                 else
                 {
-                    int[] arr = myChar.GetDigitList(number).ToArray();
-                    Array.Reverse(arr);
+                    int numberReversed = Character.GetMirror(unconvertedNumber);
                     
-                    var result = String.Join("",arr);
+                    string result = numberReversed.ToString();
+
                     TextForWork.PrintToTheFile(5, result);
                     return result;
                 }

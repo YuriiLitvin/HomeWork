@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace homeWork1
 {
-    public class Character
+    public static class Character
     {
-        public bool CheckIfDigit(string value)
+        public static bool CheckIfDigit(string value)
         {
             for (int i = 0; i < value.Length; i++)
             {
@@ -20,7 +18,7 @@ namespace homeWork1
             }
             return true;
         }
-        public List<int> GetDigitList(string value)
+        public static List<int> GetDigitList(string value)
         {
             List<int> list = new List<int>();
 
@@ -31,7 +29,7 @@ namespace homeWork1
             }
             return list;
         }
-        public int GetDigit(string value) 
+        public static int GetDigit(string value) 
         {
             List<int> list = new List<int>();
 
@@ -52,7 +50,26 @@ namespace homeWork1
 
         }
 
+        public static int GetMirror(string value)
+        {
+            List<int> list = new List<int>();
 
+            for (int i = 0; i < value.Length; i++)
+            {
+                int digit = value[i] - '0';
+                list.Add(digit);
+            }
+            int[] array = list.ToArray();
+
+            int number = 0;                             
+            for (int i = 0; i < array.Length; i++)
+            {
+                number += array[array.Length - i - 1] * Convert.ToInt32(Math.Pow(10, array.Length - i - 1));
+            }
+
+            return number;
+
+        }
 
     }   
 }
